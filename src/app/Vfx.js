@@ -42,7 +42,7 @@ const youtubeVideos = [
   {
     id: 6,
     title: "Sample Video 6",
-    url: "drive.google.com/file/d/1dlr5G3v13XlJlT_loCi3tC0OQN_KNMEr/preview",
+    url: "https://drive.google.com/file/d/1dlr5G3v13XlJlT_loCi3tC0OQN_KNMEr/preview",
     thumbnail: '/vfxtn/thumbnail6.jpg',
   },
 ];
