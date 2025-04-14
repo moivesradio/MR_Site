@@ -33,12 +33,12 @@ const contents = {
 
 function OverlayCards() {
     const cards = [
-      { id: 1, title: 'Card 1', text: contents.cont1, type: 'left' , src : '/imgs/Trauma_set.jpg'},
-      { id: 2, title: 'Card 2', text: contents.cont2, type: 'right', src : '/imgs/Disaster.jpg' },
-      { id: 3, title: 'Card 3', text: contents.cont3, type: 'left', src : '/imgs/IsIt4.jpg' },
-      { id: 4, title: 'Card 4', text: contents.cont4, type: 'right', src : '/imgs/high_on_oblivion.jpg' }
+      { id: 1, title: 'Our Origin Story', text: contents.cont1, type: 'left' , src : '/imgs/Trauma_set.jpg'},
+      { id: 2, title: 'Who We Are', text: contents.cont2, type: 'right', src : '/imgs/Disaster.jpg' },
+      { id: 3, title: 'A Journey of Achievements', text: contents.cont3, type: 'left', src : '/imgs/IsIt4.jpg' },
+      { id: 4, title: 'Our Aspirations for the Future', text: contents.cont4, type: 'right', src : '/imgs/high_on_oblivion.jpg' }
     ];
-    
+        
     
 
     return (
@@ -54,7 +54,7 @@ function OverlayCards() {
                 <div className="card-text">
                   <img src={card.src} alt=""/>
                   <div>
-                    <h2>title</h2><p>{card.text}</p>
+                    <h2>{card.title}</h2><p>{card.text}</p>
                   </div>
                 </div>
               </>
@@ -62,7 +62,7 @@ function OverlayCards() {
               <>
                 <div className="card-text">
                   <div>
-                    <h2>title</h2><p>{card.text}</p>
+                    <h2>{card.title}</h2><p>{card.text}</p>
                   </div>
                   <img src={card.src} alt=""/> 
                 </div>
