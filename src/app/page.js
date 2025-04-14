@@ -24,10 +24,13 @@ const imgs = ['/imgsshown/Disaster1.jpg',
 ]
 
 const contents = {
-  cont1 : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloremque dolorum nulla, illum libero quod tempora suscipit ut voluptatum veniam, nam accusantium praesentium exercitationem recusandae nemo omnis. Voluptate, ducimus corrupti?',
-  cont2 : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloremque dolorum nulla, illum libero quod tempora suscipit ut voluptatum veniam, nam accusantium praesentium exercitationem recusandae nemo omnis. Voluptate, ducimus corrupti?',
-  cont3 : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloremque dolorum nulla, illum libero quod tempora suscipit ut voluptatum veniam, nam accusantium praesentium exercitationem recusandae nemo omnis. Voluptate, ducimus corrupti?',
-  cont4 : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloremque dolorum nulla, illum libero quod tempora suscipit ut voluptatum veniam, nam accusantium praesentium exercitationem recusandae nemo omnis. Voluptate, ducimus corrupti?',
+  cont1 : 'Just three childhood buddies with zero film background and 100% obsession with movies.We didn’t know anything about filmmaking — still kinda don’t — but our wild ideas clicked, and boom… Movies Radio was born.We’re figuring it out as we go, shooting dreams with a camera (sometimes literally).Not pros, just passionate.Welcome to our chaos. Welcome to Movies Radio.',
+  
+  cont2 : 'We’re R.S.R.C.Dinesh, Prem Kumar, and Chandrasekhar — three movie maniacs with a dream (and no backup plan).One loves writing scripts and acting, another’s into editing and 3D animation,VFX , and the third’s obsessed with cinematography and direction. Basically, we’re a one-stop chaos crew.Together, we are Movies Radio — low budget, high passion, and dangerously creative.',
+  
+  cont3 : 'Made a film at 19. Won 2nd place. Thought it was a fluke.Made another. Won again. Now we were suspicious.Then boom — Anurag Kashyap and Hansal Mehta gave us an award.We peaked (emotionally).Not all our films are hits, but making them? Pure cinematic madness — and we love it.',
+  
+  cont4 : 'We’re not just playing filmmaker — we’re living it. The dream? To build a wild, unstoppable crew of storytellers like us. If you’re someone who doesn’t just want to say the story, but show it — welcome aboard. One goal. One frame at a time. An indie film. Made with madness.',
 }
 
 
