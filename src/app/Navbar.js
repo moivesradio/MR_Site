@@ -7,7 +7,7 @@ export default function Navbar() {
       <div className="logo great-vibes-regular">Movies Radio</div>
       <ul className="nav-links">
         <li><a href="#About">About</a></li>
-        <li><a href="#Work">Work</a></li>
+        <li><a href="#Work">Works</a></li>
         <li><a href="#Collab">Collab</a></li>
       </ul>
     </nav>
