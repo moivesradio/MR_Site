@@ -1,103 +1,128 @@
-import Image from "next/image";
+'use client'
+import Head from 'next/head';
+import { useEffect, useState } from 'react';
+import ClientModelWrapper from './ClientModelWrapper';
+import YouTubeCarousel from './YouTubeCarousel';
+import Navbar from './Navbar';
+import CardForm from './CardForm';
+import Vfx from './Vfx'
+import ImageCarousel from './ImageCarousel';
+import './style.css'
+
+const imgs = ['/imgsshown/Disaster1.jpg',
+               '/imgsshown/Disaster3.jpg',
+               '/imgsshown/FearLove.jpg',
+               '/imgsshown/FearLove2.jpg',
+               '/imgsshown/IsIt3.jpg',
+               '/imgsshown/Math2.jpg',
+               '/imgsshown/My_india_2.jpg',
+               '/imgsshown/Screenshot (1).png',
+               '/imgsshown/Screenshot (2).png',
+               '/imgsshown/Screenshot (73).png',
+               '/imgsshown/Screenshot (138).png',
+               '/imgsshown/Screenshot (247).png',
+]
+
+const contents = {
+  cont1 : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloremque dolorum nulla, illum libero quod tempora suscipit ut voluptatum veniam, nam accusantium praesentium exercitationem recusandae nemo omnis. Voluptate, ducimus corrupti?',
+  cont2 : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloremque dolorum nulla, illum libero quod tempora suscipit ut voluptatum veniam, nam accusantium praesentium exercitationem recusandae nemo omnis. Voluptate, ducimus corrupti?',
+  cont3 : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloremque dolorum nulla, illum libero quod tempora suscipit ut voluptatum veniam, nam accusantium praesentium exercitationem recusandae nemo omnis. Voluptate, ducimus corrupti?',
+  cont4 : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloremque dolorum nulla, illum libero quod tempora suscipit ut voluptatum veniam, nam accusantium praesentium exercitationem recusandae nemo omnis. Voluptate, ducimus corrupti?',
+}
+
+
+function OverlayCards() {
+    const cards = [
+      { id: 1, title: 'Card 1', text: contents.cont1, type: 'left' , src : '/imgs/Trauma_set.jpg'},
+      { id: 2, title: 'Card 2', text: contents.cont2, type: 'right', src : '/imgs/Disaster.jpg' },
+      { id: 3, title: 'Card 3', text: contents.cont3, type: 'left', src : '/imgs/IsIt4.jpg' },
+      { id: 4, title: 'Card 4', text: contents.cont4, type: 'right', src : '/imgs/high_on_oblivion.jpg' }
+    ];
+    
+    
+
+    return (
+      <>
+      <div className="card-container saira-semi-condensed-regular">
+        <section id="About">
+          <div>
+          <h2>About</h2>
+          {cards.map(card => (
+            <div key={card.id} className={`card ${card.type}`}>
+              {card.type === 'left' ? (
+              <>
+                <div className="card-text">
+                  <img src={card.src} alt=""/>
+                  <div>
+                    <h2>title</h2><p>{card.text}</p>
+                  </div>
+                </div>
+              </>
+              ) : (
+              <>
+                <div className="card-text">
+                  <div>
+                    <h2>title</h2><p>{card.text}</p>
+                  </div>
+                  <img src={card.src} alt=""/> 
+                </div>
+              </>
+              )}
+            </div>
+          ))}
+          </div>
+        </section>
+        {/* ///////////////works////////////// */}
+        <section id="Work">
+        <div>
+          <h2>Works</h2>
+          <YouTubeCarousel/>
+        </div>
+        <div>
+          <h2>Editing Works</h2>
+          <Vfx/>
+        </div>
+        <div>
+          <h2>The Journey so far</h2>
+          <ImageCarousel images={imgs}/>
+        </div>
+        </section>
+        <section id="Collab">
+        <div>
+          <h2>Collab</h2>
+          <CardForm/>
+        </div>
+        </section>
+      </div>
+      </>
+    );
+  }
+  
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [isLaptop, setIsLaptop] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLaptop(window.innerWidth >= 1024); // adjust breakpoint as needed
+    };
+
+    handleResize(); // check on load
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  return (
+    <>
+    <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Your Page Title</title>
+      </Head>
+    <main style={{ height: '100vh' }}>
+      <Navbar/>
+      <OverlayCards/>
+      {isLaptop && <ClientModelWrapper />}
+    </main>
+    </>
   );
 }

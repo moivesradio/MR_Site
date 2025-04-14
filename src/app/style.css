@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Saira+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* .left , .right{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+} */
+body{
+    background-color: black;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.saira-semi-condensed-regular {
+    font-family: "Saira Semi Condensed", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: larger;
+    color: rgb(255, 255, 255);
+  }
+
+.card-container{
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 100%;
+    position: absolute;
+    display: grid;
+    grid-auto-rows: auto;
+    justify-content: center;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.card-container > section > div > h2{
+    padding-left: 10%;
+    font-family: "Saira Semi Condensed", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: larger;
+    color: rgb(255, 255, 255);
+}
+
+.card{
+    /* border: solid black 1px; */
+    box-shadow: 10px 10px 5px rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 1.5% 10%;
+    padding: 2.5% 5%;
+    background-color: rgba(214, 245, 255, 0.238);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    /* pointer-events: auto; */
+}
+
+.card-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.card-text>img{
+    width: 400px;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover; 
+    flex-shrink: 0;
+    justify-content: space-around;
+    border-radius: 10px;
+}
+
+.card-text > div{
+    padding:2.5% 5% ;
+}
+
+.center-overlay {
+    position: fixed;       
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: 0;           
+  }
+  
+.carousel-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+@media only screen and (max-width: 988px) {
+  .card-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .card-container{
+    width: 100%;
+    margin-top: 20%;
+  }
+  
+  .card{
+    margin: 2% auto;
+    width: 80vw;
+  }
+
+  .nav-links{
+    display: none;
+  }
+  .right > .card-text{
+    flex-direction: column-reverse  !important
+  }
+}
